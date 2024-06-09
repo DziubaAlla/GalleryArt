@@ -1,0 +1,64 @@
+.preload-overlay{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.1); /* semi-transparent black */
+    backdrop-filter: blur(5px);
+    z-index: 5;
+}
+
+.preload-overlay h1 {
+    font-family: 'Open Sans', -apple-system, 'Segoe UI', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: #212121;
+    box-sizing: border-box;
+}
+.preload-overlay .dots {
+    display: inline-flex;
+}
+.preload-overlay .dots--animate .dot.z {
+    animation: scale 0.8s 0.2s forwards;
+}
+.preload-overlay .dots--animate .dot.f, .dots--animate .dot.s {
+    animation: right 0.5s forwards;
+}
+.preload-overlay .dots--animate .dot.l {
+    animation: rightDown 0.4s 0.1s forwards linear, drop 2s 0.4s forwards linear;
+}
+.preload-overlay .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #212121;
+    border-radius: 10px;
+    position: relative;
+    margin-left: 6px;
+}
+.preload-overlay .dot.z {
+    position: absolute;
+    transform: scale(0);
+}
+@keyframes scale {
+    100% {
+        transform: scale(1);
+   }
+}
+.preload-overlay .dot.f, .preload-overlay .dot.s {
+    transform: translateX(0px);
+}
+
+.preload-overlay .dot.t {
+    background: transparent;
+}
+.preload-overlay .dot .l {
+    margin-left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
